@@ -50,13 +50,18 @@ export function Newsletter() {
           </p>
           
           <form onSubmit={handleSubmit(onSubmit)} className="flex flex-col sm:flex-row gap-2">
-            <div className="flex-1">
+            <div className="flex-1 relative">
               <Input
                 type="email"
                 placeholder="Your email address"
                 {...register("email")}
-                error={errors.email?.message}
+                className={errors.email ? "border-red-500" : ""}
               />
+              {errors.email && (
+                <p className="mt-1 text-sm text-red-500 text-left">
+                  {errors.email.message}
+                </p>
+              )}
             </div>
             <Button type="submit" disabled={isSubmitting}>
               {isSubmitting ? "Subscribing..." : "Subscribe"}
