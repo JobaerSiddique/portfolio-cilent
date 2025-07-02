@@ -32,6 +32,33 @@ const blogPosts = [
     tags: ["Node.js", "Express", "Backend"],
     slug: "building-scalable-apis-with-nodejs",
   },
+  {
+    id: 4,
+    title: "Building Scalable APIs with Node.js",
+    excerpt: "Best practices for creating robust and scalable APIs using Node.js and Express.",
+    date: "2023-09-12",
+    readTime: "10 min read",
+    tags: ["Node.js", "Express", "Backend"],
+    slug: "building-scalable-apis-with-nodejs",
+  },
+  {
+    id: 5,
+    title: "Building Scalable APIs with Node.js",
+    excerpt: "Best practices for creating robust and scalable APIs using Node.js and Express.",
+    date: "2023-09-12",
+    readTime: "10 min read",
+    tags: ["Node.js", "Express", "Backend"],
+    slug: "building-scalable-apis-with-nodejs",
+  },
+  {
+    id: 6,
+    title: "Building Scalable APIs with Node.js",
+    excerpt: "Best practices for creating robust and scalable APIs using Node.js and Express.",
+    date: "2023-09-12",
+    readTime: "10 min read",
+    tags: ["Node.js", "Express", "Backend"],
+    slug: "building-scalable-apis-with-nodejs",
+  },
 ]
 
 export default function BlogPage() {

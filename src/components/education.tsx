@@ -4,31 +4,31 @@ import { GraduationCap, School } from "lucide-react"
 
 const education = [
   {
-    degree: "Master in Computer Science",
-    institution: "Tech University",
-    year: "2020 - 2022",
-    description: "Specialized in Web Technologies and Cloud Computing",
+    degree: "Bachelor of Science",
+    institution: "Daffodil Institute of IT",
+    year: "2018-2021",
+    description: "Specialized in Web Technologies and Software Computing",
     icon: <GraduationCap className="w-5 h-5" />
   },
   {
-    degree: "Bachelor in Software Engineering",
-    institution: "State University",
-    year: "2016 - 2020",
-    description: "Focus on Full Stack Development and Database Systems",
+    degree: "Higher Secondary (School) Certificate",
+    institution: "Amin Model Town School and College",
+    year: "2014-2016",
+    description: "As Science ",
     icon: <School className="w-5 h-5" />
   },
    {
-    degree: "Master in Computer Science",
-    institution: "Tech University",
-    year: "2020 - 2022",
-    description: "Specialized in Web Technologies and Cloud Computing",
+    degree: "Secondary School Certificate (SSC)",
+    institution: "Savar Cantonment Board High Schhol",
+    year: "2012 - 2014",
+    description: "As Science",
     icon: <GraduationCap className="w-5 h-5" />
   },
   {
-    degree: "Bachelor in Software Engineering",
-    institution: "State University",
-    year: "2016 - 2020",
-    description: "Focus on Full Stack Development and Database Systems",
+    degree: "Junior School Certificate",
+    institution: "Savar Cantonment Board High Schhol",
+    year: "2011",
+    description: "Junior Exam",
     icon: <School className="w-5 h-5" />
   }
 ]

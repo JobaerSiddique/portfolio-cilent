@@ -7,31 +7,25 @@ import { SlideUp } from "@/components/animations/slide-up"
 const aboutData = {
   bio: "I'm a passionate Full Stack Developer with 5+ years of experience building web applications. I specialize in modern JavaScript frameworks and have a strong background in both frontend and backend development.",
   stats: [
-    { value: "50+", label: "Projects Completed" },
-    { value: "5+", label: "Years Experience" },
+    { value: "15+", label: "Projects Completed" },
+    { value: "3+", label: "Years Experience" },
     { value: "100%", label: "Client Satisfaction" },
   ],
   experience: [
     {
-      role: "Senior Full Stack Developer",
-      company: "TechCorp",
-      period: "2021 - Present",
+      role: " Full Stack Developer (Backend Team Leader",
+      company: "Radyan IT",
+      period: "2025-2025 ",
       description: "Leading a team of developers to build scalable web applications.",
       icon: <Briefcase className="w-5 h-5" />,
     },
-    {
-      role: "Frontend Developer",
-      company: "WebSolutions",
-      period: "2019 - 2021",
-      description: "Developed responsive UIs and implemented state management solutions.",
-      icon: <Code className="w-5 h-5" />,
-    },
+  
   ],
   education: [
     {
-      degree: "Master in Computer Science",
-      institution: "Tech University",
-      period: "2017 - 2019",
+      degree: "Bachelor of Science",
+      institution: "DIIT",
+      period: "2018 - 2021",
       icon: <GraduationCap className="w-5 h-5" />,
     },
   ],
@@ -54,7 +48,7 @@ export default function AboutPage() {
           <SlideUp>
             <div className="relative rounded-2xl overflow-hidden border aspect-square max-w-md mx-auto">
               <Image
-                src="/Images/profile.jpg.JPG"
+                src="/Images/profile.png.png"
                 alt="About me"
                 fill
                 className="object-cover"
@@ -64,8 +58,8 @@ export default function AboutPage() {
 
           <div>
             <FadeIn delay={0.2}>
-              <h2 className="text-2xl font-bold mb-4">Who am I?</h2>
-              <p className="text-muted-foreground mb-6">{aboutData.bio}</p>
+              <h2 className="text-3xl font-bold mb-4 text-orange-400">Who am I?</h2>
+              <p className="text-muted-foreground mb-6 text-justify">{aboutData.bio}</p>
             </FadeIn>
 
             <SlideUp delay={0.4}>

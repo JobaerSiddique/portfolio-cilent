@@ -24,19 +24,19 @@ const contactInfo = [
   {
     icon: <Mail className="w-5 h-5" />,
     title: "Email",
-    value: "contact@example.com",
-    href: "mailto:contact@example.com",
+    value: "jobaersiddique28me@gmail.com",
+    href: "mailto:jobaersiddique28me@gmail.com",
   },
   {
     icon: <Phone className="w-5 h-5" />,
     title: "Phone",
-    value: "+1 (123) 456-7890",
-    href: "tel:+11234567890",
+    value: "+8801640-576257",
+    href: "tel:+8801640576257", // Fixed phone href
   },
   {
     icon: <MapPin className="w-5 h-5" />,
     title: "Location",
-    value: "San Francisco, CA",
+    value: "Savar, Ashulia, Dhaka",
     href: "#",
   },
 ]
@@ -51,15 +51,22 @@ export default function ContactPage() {
     resolver: zodResolver(contactFormSchema),
   })
 
-  const onSubmit = async (data: ContactFormValues) => {
-    try {
-      // Simulate API call
-      await new Promise(resolve => setTimeout(resolve, 1000))
-      toast.success("Your message has been sent successfully!")
-      reset()
-    } catch (error) {
-      toast.error("Something went wrong. Please try again.")
-    }
+  const onSubmit = (data: ContactFormValues) => {
+    const { name, email, subject, message } = data
+    
+    // Create mailto link with form data
+    const mailtoLink = `mailto:jobaersiddique28me@gmail.com?subject=${encodeURIComponent(
+      subject
+    )}&body=${encodeURIComponent(
+      `Name: ${name}\nEmail: ${email}\n\nMessage:\n${message}`
+    )}`
+    
+    // Open user's default email client
+    window.open(mailtoLink, '_blank')
+    
+    // Show success message
+    toast.success("Opening your email client...")
+    reset()
   }
 
   return (
@@ -87,33 +94,45 @@ export default function ContactPage() {
                   <Input
                     placeholder="Your Name"
                     {...register("name")}
-                    error={errors.name?.message}
+                    className={errors.name ? "border-red-500" : ""}
                   />
+                  {errors.name && (
+                    <p className="mt-1 text-sm text-red-500">{errors.name.message}</p>
+                  )}
                 </div>
                 <div>
                   <Input
                     placeholder="Your Email"
                     {...register("email")}
-                    error={errors.email?.message}
+                    className={errors.email ? "border-red-500" : ""}
                   />
+                  {errors.email && (
+                    <p className="mt-1 text-sm text-red-500">{errors.email.message}</p>
+                  )}
                 </div>
                 <div>
                   <Input
                     placeholder="Subject"
                     {...register("subject")}
-                    error={errors.subject?.message}
+                    className={errors.subject ? "border-red-500" : ""}
                   />
+                  {errors.subject && (
+                    <p className="mt-1 text-sm text-red-500">{errors.subject.message}</p>
+                  )}
                 </div>
                 <div>
                   <Textarea
                     placeholder="Your Message"
                     rows={5}
                     {...register("message")}
-                    error={errors.message?.message}
+                    className={errors.message ? "border-red-500" : ""}
                   />
+                  {errors.message && (
+                    <p className="mt-1 text-sm text-red-500">{errors.message.message}</p>
+                  )}
                 </div>
                 <Button type="submit" disabled={isSubmitting}>
-                  {isSubmitting ? "Sending..." : "Send Message"}
+                  {isSubmitting ? "Processing..." : "Open Email to Send"}
                 </Button>
               </form>
             </div>
@@ -152,11 +171,11 @@ export default function ContactPage() {
                 </p>
                 <div className="space-y-2">
                   <div className="flex items-center justify-between">
-                    <span className="font-medium">Monday - Friday</span>
-                    <span className="text-muted-foreground">9:00 AM - 5:00 PM</span>
+                    <span className="font-medium">Saturday to Thursday</span>
+                    <span className="text-muted-foreground">9:00 AM - 8:00 PM (BDT Time)</span>
                   </div>
                   <div className="flex items-center justify-between">
-                    <span className="font-medium">Weekends</span>
+                    <span className="font-medium">Friday</span>
                     <span className="text-muted-foreground">By appointment</span>
                   </div>
                 </div>

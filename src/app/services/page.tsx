@@ -28,17 +28,8 @@ const services = [
       "Design Systems",
     ],
   },
-  {
-    title: "Mobile Development",
-    description: "Cross-platform mobile applications for iOS and Android using React Native.",
-    icon: <Smartphone className="w-8 h-8" />,
-    features: [
-      "iOS & Android Apps",
-      "Offline Capabilities",
-      "Push Notifications",
-      "App Store Deployment",
-    ],
-  },
+  
+  
   {
     title: "Backend Development",
     description: "Robust server-side solutions with Node.js, Express, and MongoDB.",
@@ -65,7 +56,7 @@ export default function ServicesPage() {
           </div>
         </FadeIn>
 
-        <div className="grid md:grid-cols-2 gap-8">
+        <div className="grid md:grid-cols-3 gap-8">
           {services.map((service, index) => (
             <SlideUp key={index} delay={index * 0.1}>
               <div className="glass-card p-8 rounded-lg border h-full hover:border-primary transition-colors">
